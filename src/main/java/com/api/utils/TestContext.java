@@ -16,6 +16,10 @@ public class TestContext {
 	public Response response;
 	public Object requestBody;
 	public Integer storeId;
+    public String projectId;	
+	public String issueTypeId;
+	
+	
 	public Map<String, Object> dataMap = new HashMap<String, Object>();
 	private static final String CONTENT_TYPE = PropertiesFile.getProperty("content.type");
 	

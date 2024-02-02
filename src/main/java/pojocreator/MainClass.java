@@ -13,6 +13,6 @@ public class MainClass {
 		String outputFileDirectory = "src/main/java/";
 		
 		File file = new File(outputFileDirectory);
-		createPojoFromJson.convertJsonToJavaClass(file,"com.api.model.createStoreModel","CreateStoresResponse",JsonReader.getResponseBody("CreateStoreResponse.json"));
+		createPojoFromJson.convertJsonToJavaClass(file,"com.api.model.createStoreModel","CreateStoresResponse",JsonReader.readJsonFile("CreateStoreResponse.json").toJSONString());
 	}
 }

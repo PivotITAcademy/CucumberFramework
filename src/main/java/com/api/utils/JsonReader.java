@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.json.JSONTokener;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -31,7 +32,7 @@ public class JsonReader {
 		return body.toString();
 	}
 	
-	public static String getResponseBody(String jsonFileName) {		
+	public static JSONObject readJsonFile(String jsonFileName) {		
 		try {
 			body = ((JSONObject)parser.parse(new FileReader(dataPath+jsonFileName)));
 			if (body == null) {
@@ -44,6 +45,8 @@ public class JsonReader {
 		} catch (ParseException e) {
 			throw new RuntimeException("Parse Exception occured while Parsing: " + jsonFileName);
 		}
-		return body.toString();
+		return (JSONObject) body;
 	}
+	
+	
 }
